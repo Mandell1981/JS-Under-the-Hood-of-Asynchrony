@@ -1,10 +1,16 @@
-function doWork() {
-    let start = new Date().getTime()
-    let now = start;
-    while (now < start + 500) {
-        now = new Date().getTime()
-    }
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
 }
+async function doWork() {
+    await delay(500);
+    console.log('End of work');
+    
+    let start = new Date().getTime();
+    let now = start;
+    
+}
+
+ doWork();
 
 function sleep(time) {
     return new Promise(resolve => setTimeout(resolve, time))
